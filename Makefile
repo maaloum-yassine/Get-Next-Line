@@ -11,25 +11,25 @@
 # **************************************************************************** #
 
 CC			=	cc
-CCFLAGS		=	-Wall -Wextra -Werror
-NAME		=	getnextline
-NAME_BONUS	=	getnextline_bonus
+CCFLAGS			=	-Wall -Wextra -Werror
+NAME			=	getnextline
+NAME_BONUS		=	getnextline_bonus
 
 SRC			=	./src/get_next_line.c \
 				./src/get_next_line_utils.c \
 				./src/main.c
 
-SRC_BONUS	=	./bonus/get_next_line_bonus.c \
+SRC_BONUS		=	./bonus/get_next_line_bonus.c \
 				./bonus/get_next_line_utils_bonus.c \
 				./bonus/main_bonus.c
 
-RESET		=	\033[1;97m
-GREEN		=	\033[1;32m
+RESET			=	\033[1;97m
+GREEN			=	\033[1;32m
 RED			=	\033[1;31m
 
-OBJ_DIR		=	obj/
+OBJ_DIR			=	obj/
 OBJ			=	$(patsubst ./src/%.c,$(OBJ_DIR)%.o,$(SRC))
-OBJ_BONUS	=	$(patsubst ./bonus/%.c,$(OBJ_DIR)%.o,$(SRC_BONUS))
+OBJ_BONUS		=	$(patsubst ./bonus/%.c,$(OBJ_DIR)%.o,$(SRC_BONUS))
 
 all: $(OBJ_DIR) $(NAME)
 
