@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: ymaaloum <ymaaloum@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/06 04:51:25 by ymaaloum          #+#    #+#              #
-#    Updated: 2024/06/08 07:43:55 by ymaaloum         ###   ########.fr        #
+#    Updated: 2024/06/08 07:52:26 by ymaaloum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,13 +15,13 @@ CCFLAGS		=	-Wall -Wextra -Werror
 NAME		=	getnextline
 NAME_BONUS	=	getnextline_bonus
 
-SRC         =   ./src/get_next_line.c \
-                ./src/get_next_line_utils.c \
-                ./src/main.c
+SRC			=	./src/get_next_line.c \
+				./src/get_next_line_utils.c \
+				./src/main.c
 
-SRC_BONUS	=	./src/get_next_line_bonus.c \
-				./src/get_next_line_utils_bonus.c \
-				./src/main_bonus.c
+SRC_BONUS	=	./bonus/get_next_line_bonus.c \
+				./bonus/get_next_line_utils_bonus.c \
+				./bonus/main_bonus.c
 
 RESET		=	\033[1;97m
 GREEN		=	\033[1;32m
@@ -29,7 +29,7 @@ RED			=	\033[1;31m
 
 OBJ_DIR		=	obj/
 OBJ			=	$(patsubst ./src/%.c,$(OBJ_DIR)%.o,$(SRC))
-OBJ_BONUS	=	$(patsubst ./src/%.c,$(OBJ_DIR)%.o,$(SRC_BONUS))
+OBJ_BONUS	=	$(patsubst ./bonus/%.c,$(OBJ_DIR)%.o,$(SRC_BONUS))
 
 all: $(OBJ_DIR) $(NAME)
 
@@ -49,6 +49,9 @@ bonus: $(OBJ_DIR) $(NAME_BONUS)
 $(NAME_BONUS): $(OBJ_BONUS)
 	@$(CC) $(CCFLAGS) $(OBJ_BONUS) -o $(NAME_BONUS)
 	@echo "$(GREEN)$(NAME_BONUS) : Created ! [^_^]$(RESET)"
+
+$(OBJ_DIR)%.o: ./bonus/%.c
+	$(CC) $(CCFLAGS) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJ_DIR)
