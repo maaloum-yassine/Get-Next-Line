@@ -21,7 +21,7 @@
 
 int main (void)
 {
-	char	*line;
+	char		*line;
 	int		fd[3];
 	int		check;
 	int		i;
