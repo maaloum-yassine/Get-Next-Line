@@ -79,5 +79,4 @@ int main (void)
 		}
 	}
 	return (check);
-	return (0);
 }
