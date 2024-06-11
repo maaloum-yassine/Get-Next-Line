@@ -6,18 +6,18 @@
 #    By: ymaaloum <ymaaloum@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/06 04:51:25 by ymaaloum          #+#    #+#              #
-#    Updated: 2024/06/08 07:54:33 by ymaaloum         ###   ########.fr        #
+#    Updated: 2024/06/11 15:40:26 by ymaaloum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC			=	cc
+CC				=	cc
 CCFLAGS			=	-Wall -Wextra -Werror
 NAME			=	getnextline
 NAME_BONUS		=	getnextline_bonus
 
-SRC			=	./src/get_next_line.c \
-				./src/get_next_line_utils.c \
-				./src/main.c
+SRC			=	./mandatory/get_next_line.c \
+				./mandatory/get_next_line_utils.c \
+				./mandatory/main.c
 
 SRC_BONUS		=	./bonus/get_next_line_bonus.c \
 				./bonus/get_next_line_utils_bonus.c \
@@ -28,7 +28,7 @@ GREEN			=	\033[1;32m
 RED			=	\033[1;31m
 
 OBJ_DIR			=	obj/
-OBJ			=	$(patsubst ./src/%.c,$(OBJ_DIR)%.o,$(SRC))
+OBJ			=	$(patsubst ./mandatory/%.c,$(OBJ_DIR)%.o,$(SRC))
 OBJ_BONUS		=	$(patsubst ./bonus/%.c,$(OBJ_DIR)%.o,$(SRC_BONUS))
 
 all: $(OBJ_DIR) $(NAME)
@@ -41,7 +41,7 @@ $(NAME): $(OBJ)
 	$(CC) $(CCFLAGS) $(OBJ) -o $(NAME)
 	@echo "$(GREEN)$(NAME) : Created ! [^_^]$(RESET)"
 
-$(OBJ_DIR)%.o: ./src/%.c
+$(OBJ_DIR)%.o: ./mandatory/%.c
 	$(CC) $(CCFLAGS) -c $< -o $@
 
 bonus: $(OBJ_DIR) $(NAME_BONUS)
