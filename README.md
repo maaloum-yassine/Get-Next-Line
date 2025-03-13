@@ -1,7 +1,11 @@
 <p align="center">
-  <img src="https://github.com/mcombeau/mcombeau/blob/main/42_badges/get_next_linee.png" alt="get_next_line 42 project badge"/>
+  <img src="https://github.com/maaloum-yassine/42/blob/main/logo_project42/get_next_linen.png" alt="get_next_line 42 project badge"/>
 </p>
 
+## 🎥 Score 🥇✅
+<p align="center">
+  <img src="https://github.com/maaloum-yassine/42/blob/main/score/get_next_line42.png" alt="Score 42 project 115"/>
+</p>
 
 ---
 
